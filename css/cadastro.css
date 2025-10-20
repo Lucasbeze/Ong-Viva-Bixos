@@ -1,0 +1,243 @@
+/* =======================
+    ESTILO GERAL
+======================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background-color: #f5f5f5;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* =======================
+    CABEÇALHO
+======================= */
+.head {
+  background-color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.head img {
+  width: 150px;
+  height: auto;
+}
+
+.head nav ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+.head nav ul a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+/* CORRIGIDO: Padronização do hover do menu com o padrão Laranja */
+.head nav ul a:hover,
+.head nav ul a[aria-current="page"] {
+  background-color: #e8f5e9; /* Fundo Laranja suave no hover/ativo */
+  color: #FF9900; /* Texto Laranja */
+}
+
+/* =======================
+    CONTEÚDO PRINCIPAL
+======================= */
+
+main {
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 60px 40px; 
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Título principal H1 */
+main h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+/* Seção de Introdução */
+.intro {
+  text-align: center; 
+  margin-bottom: 60px; 
+}
+
+.intro p {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* =======================
+    SEÇÕES GERAIS E TÍTULOS
+======================= */
+.content-section {
+    margin-bottom: 60px; 
+}
+
+/* Títulos de seção H2 e H3 */
+.content-section h2 {
+    color: #222;
+    font-size: 28px;
+    margin-bottom: 20px; 
+}
+
+/* =======================
+    ESTILOS DO FORMULÁRIO (cadastro.html)
+======================= */
+.form-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 30px; 
+}
+
+fieldset {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 8px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+    gap: 20px;
+}
+
+fieldset legend {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #FF9900; /* CORRIGIDO: Cor de destaque Laranja */
+    padding: 0 10px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group.large-input {
+    grid-column: 1 / -1; 
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #444;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+input[list] {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1em;
+    transition: border-color 0.3s;
+    width: 100%;
+}
+
+input:focus {
+    border-color: #FF9900; /* CORRIGIDO: Foco em Laranja */
+    outline: none;
+    box-shadow: 0 0 5px rgba(255, 153, 0, 0.5); /* Sombra Laranja */
+}
+
+/* Estilo para validação nativa (inputs inválidos) */
+input:invalid:not(:placeholder-shown) {
+    border-color: #e53935; /* Vermelho para erro */
+}
+
+/* Checkbox Group */
+.checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 5px;
+}
+
+.checkbox-group label {
+    font-weight: normal;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: auto;
+}
+
+
+/* Botão de Envio */
+.form-submit {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-top: 10px;
+}
+
+button[type="submit"] {
+    background-color: #FF9900; /* CORRIGIDO: Laranja Primário */
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+button[type="submit"]:hover {
+    background-color: #ff8c00; /* Laranja mais escuro no hover */
+    transform: translateY(-2px);
+}
+
+/* Mensagem de Sucesso (após envio) */
+.success-message {
+    padding: 40px;
+    border: 2px solid #FF9900; /* CORRIGIDO: Borda Laranja */
+    border-radius: 10px;
+    background-color: #FFF2E6; /* CORRIGIDO: Fundo suave Laranja */
+    text-align: center;
+}
+
+.success-message h2 {
+    color: #FF9900;
+    margin-bottom: 10px;
+}
+
+/* =======================
+    RODAPÉ
+======================= */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: white;
+    border-top: 1px solid #ddd;
+    margin-top: 60px;
+}
+
+footer p {
+    font-size: 14px;
+    color: #555;
+}

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ONG Viva Bicho - Início</title>
+    <!-- Alterado o link do CSS para seguir o padrão do projeto -->
+    <link rel="stylesheet" href="styled.css" /> 
+    <meta
+      name="description"
+      content="Página inicial da ONG Viva Bicho, conheça nossa missão e como ajudamos animais."
+    />
+  </head>
+  <body>
+    <!-- Cabeçalho / Navegação - Adicionado role="banner" e classes de navegação -->
+    <header class="head" role="banner">
+      <a href="index.html" aria-label="Página inicial">
+        <img src="imagens/logo.png" alt="Logotipo ONG Viva Bicho" />
+      </a>
+      <nav role="navigation" aria-label="Menu principal">
+        <ul>
+          <li><a href="index.html" aria-current="page">Início</a></li>
+          <!-- Ajustado o caminho para seguir o padrão de pastas: pages/projetos.html -> projetos.html -->
+          <li><a href="pages/projetos.html">Projetos</a></li> 
+          <li><a href="pages/cadastro.html">Cadastro</a></li>
+        </ul>
+      </nav>
+    </header>
+    
+    <main role="main">
+      <!-- Seção Principal de Destaque (Hero Slider) -->
+      <section class="hero-slider" aria-label="Carrossel de imagens de animais">
+        <div class="slider-container">
+          <!-- Certifique-se de que os caminhos das imagens estejam corretos -->
+          <img src="imagens/salsichadog.png" alt="Cachorro da raça Dachshund" />
+          <img src="imagens/catwhite.avif" alt="Gato branco" />
+          <img src="imagens/doglabrador.png" alt="Cachorro Labrador feliz" />
+          <img src="imagens/bruce.avif" alt="Gato preto" />
+          <img src="imagens/doglabra.avif" alt="Cachorro de porte médio" />
+        </div>
+      </section>
+
+      <!-- Seção de Missão e Sobre a ONG -->
+      <section id="sobre" class="content-section" aria-labelledby="missao-title">
+        <h2 id="missao-title">Nossa Missão</h2>
+        <p>Acreditamos no poder da comunidade para transformar vidas.</p>
+        <p>
+          Com o apoio de nossos voluntários e doadores, conseguimos realizar 15
+          mil resgates, reabilitações e projetos de castração e educação.
+        </p>
+        <p>Nossa dedicação é total para oferecer uma segunda chance aos animais resgatados, garantindo que encontrem um lar seguro e amoroso.
+        </p>
+        <!-- Adicionando um Call-to-Action coerente com as outras páginas -->
+        <a href="pages/projetos.html" class="cta-button">Veja como ajudar</a>
+      </section>
+      
+      <!-- Seção de Contato Rápido (para seguir a especificação da professora) -->
+      <section class="contact-section content-section" aria-labelledby="contato-title">
+        <h2 id="contato-title">Informações de Contato</h2>
+        <div class="contact-info">
+            <p><strong>E-mail:</strong> <a href="mailto:contato@vivabicho.org">contato@vivabicho.org</a></p>
+            <p><strong>Telefone:</strong> (11) 99999-9999</p>
+            <p><strong>Endereço Sede:</strong> Rua dos Animais Felizes, 123 - São Paulo, SP (Aberto para visitas agendadas)</p>
+        </div>
+      </section>
+
+    </main>
+    
+    <footer role="contentinfo">
+      <p>© 2025 ONG Viva Bicho - Todos os direitos reservados.</p>
+      <p>
+        Contato:
+        <a href="mailto:contato@vivabicho.org">contato@vivabicho.org</a> | Tel:
+        (11) 99999-9999
+      </p>
+    </footer>
+
+    <!-- Script para Máscaras e Interatividade (Semântica pura não faz máscaras) -->
+    <script>
+        const slider = document.querySelector(".slider-container");
+        let slideIndex = 0;
+        const images = slider.querySelectorAll("img");
+
+        function showSlides() {
+          images.forEach((img, index) => {
+            img.style.display = "none"; // Esconde todas as imagens
+          });
+          slideIndex++;
+          if (slideIndex > images.length) {
+            slideIndex = 1;
+          }
+          images[slideIndex - 1].style.display = "block"; // Mostra a imagem atual
+          setTimeout(showSlides, 3000); // Muda a imagem a cada 3 segundos
+        }
+
+        showSlides(); // Inicia o carrossel
+    </script>
+  </body>
+</html>
