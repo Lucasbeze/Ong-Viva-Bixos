@@ -123,3 +123,6 @@ Laranja Primário (Destaque/Botões): #FF9900
 Laranja Secundário (Fundo Suave): #FFF2E6
 
 Desenvolvido para fins acadêmicos.
+
+
+Alteração para commits ultima parte do exercicio pratico !
